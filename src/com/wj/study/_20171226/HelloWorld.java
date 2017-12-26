@@ -1,4 +1,4 @@
-package com.wj.stury._20171226;
+package com.wj.study._20171226;
 
 public class HelloWorld {
 	public static void main(String[] args) {
