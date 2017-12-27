@@ -1,5 +1,9 @@
 package com.wj.study._20171227;
-
+/**
+ * 构造方法学习
+ * @author 和谐社会人人有责
+ *
+ */
 public class ContructorStudy {
 	String color ;
 	String size ;
