@@ -1,6 +1,6 @@
 package com.wj.study._20171227;
 
-public class Zhixing {
+public class Test {
 
 	//public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -20,7 +20,7 @@ public class Zhixing {
      String name;
      String sex;
      static int age;
-     public Zhixing(){
+     public Test(){
     	 name = "tom";
     	 System.out.println("通过构造方法初始化name");
      }
@@ -36,7 +36,7 @@ public class Zhixing {
     	 System.out.println("姓名：" + name + "，性别：" + sex + "，年龄：" + age);
      }
      public static void main(String[] args){
-    	 Zhixing zhixing = new Zhixing();
+    	 Test zhixing = new Test();
     	 zhixing.show();
      }
 }
