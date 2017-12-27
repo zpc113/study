@@ -1,7 +1,7 @@
 package com.wj.study._20171227;
 /**
- * ¹¹Ôì·½·¨Ñ§Ï°
- * @author ºÍĞ³Éç»áÈËÈËÓĞÔğ
+ * æ„é€ æ–¹æ³•å­¦ä¹ 
+ * @author æ±ªæ™¶
  *
  */
 public class ContructorStudy {
@@ -9,18 +9,18 @@ public class ContructorStudy {
 	String size ;
 	String style ;
     public ContructorStudy(){
-    	System.out.println("ÕâÊÇÎŞ²ÎµÄ£¡");
+    	System.out.println("è¿™æ˜¯æ— å‚çš„ï¼");
     }
     public ContructorStudy(String color1 , String size1 , String style1){
-    	if (color1 == "°×É«"){//µÚÆßµã
-    		color1 = "ºìÉ«";
-    		System.out.println("Ã»ÓĞ°×É«µÄÒÂ·şÁË£¡");
+    	if (color1 == "ç™½è‰²"){//ç¬¬ä¸ƒç‚¹
+    		color1 = "çº¢è‰²";
+    		System.out.println("æ²¡æœ‰ç™½è‰²çš„è¡£æœäº†ï¼");
     	} else {
-    		System.out.println("¹§Ï²ÄãÇÀµ½ÁËÄãÏ²»¶µÄÒÂ·ş£¡");
+    		System.out.println("æ­å–œä½ æŠ¢åˆ°äº†ä½ å–œæ¬¢çš„è¡£æœï¼");
     	}
     	color = color1 ;
     	size = size1 ;
     	style = style1 ;
-    	System.out.println("ÕâÊÇÓĞ²ÎµÄ£¡");
+    	System.out.println("è¿™æ˜¯æœ‰å‚çš„ï¼");
     }
 }
