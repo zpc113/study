@@ -1,5 +1,5 @@
 package com.wj.study._20171230;
-//是Object的子类，则子类也是其子类
+//父类是Object的子类，则子类也是其子类
 public class Father extends Object{//用final修饰时，不能被继承
     public int age = 30;//private修饰的时候不能继承。
     //用final时，不能在其他位置进行改值，未赋值时，需在构造方法中赋值，不然会报错。

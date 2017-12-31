@@ -9,7 +9,7 @@ public class StaticMember {
 	    	//访问外部类的静态成员，和内部类的静态成员重名时，外部类名.静态成员
 		    System.out.println("访问外部类中的score：" + StaticMember.score);
 		    System.out.println("访问内部类中的score：" + score);
-		  //访问外部类的非静态成员，不能直接访问，new 外部类名().静态成员
+		    //访问外部类的非静态成员，不能直接访问，new 外部类名().静态成员
 		    System.out.println("访问外部类中的score1：" + new StaticMember().score1);
 	    }
 	}
