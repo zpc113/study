@@ -22,9 +22,9 @@ public class Text {
 			int n = 0;// 人数
 			int m = 0;// 货重
 			int p = 0;// 价格
-			String t1 = "";
-			String t2 = "";
-			String t3 = "";// 车辆名称
+			String t1 = ""; // 轿车
+			String t2 = ""; // 货车
+			String t3 = "";// 皮卡
 			for (int j = 1; j <= i; j++) {
 				System.out.println("请输入第" + j + "辆车的序号：");
 				int a = input.nextInt();
@@ -36,7 +36,7 @@ public class Text {
 					t1 = t1 + " " + car.name;
 				} else if (car.driveType == 1 && !t2.contains(car.name)) {
 					t2 = t2 + " " + car.name;
-				} else if (!t3.contains(car.name)) {
+				} else if (car.driveType == 2 && !t3.contains(car.name)) {
 					t3 = t3 + " " + car.name;
 				}
 			}
