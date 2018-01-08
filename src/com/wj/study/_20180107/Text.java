@@ -28,18 +28,16 @@ public class Text {
 			for (int j = 1; j <= i; j++) {
 				System.out.println("请输入第" + j + "辆车的序号：");
 				int a = input.nextInt();
-				n = rent[a - 1].sum1 + n;
-				m = rent[a - 1].sum2 + m;
-				p = rent[a - 1].price + p;
-				if (rent[a - 1].driveType == 0) {
-					if (!isContain(t1))
-						t1 = t1 + " " + rent[a - 1].name;
-				} else if (rent[a - 1].driveType == 1) {
-					if (!isContain(t2))
-						t2 = t2 + " " + rent[a - 1].name;
-				} else {
-					if (!isContain(t3))
-						t3 = t3 + " " + rent[a - 1].name;
+				Car car = rent[a - 1];
+				n = car.sum1 + n;
+				m = car.sum2 + m;
+				p = car.price + p;
+				if (car.driveType == 0 && !t1.contains(car.name)) {
+					t1 = t1 + " " + car.name;
+				} else if (car.driveType == 1 && !t2.contains(car.name)) {
+					t2 = t2 + " " + car.name;
+				} else if (!t3.contains(car.name)) {
+					t3 = t3 + " " + car.name;
 				}
 			}
 			System.out.println("请输入租车天数：");
@@ -54,11 +52,5 @@ public class Text {
 		}
 	}
 
-	public static boolean isContain(String str) {
-		if (str.contains("法拉利") || str.contains("兰博基尼") || str.contains("拖拉机") || str.contains("东风风神")
-				|| str.contains("皮卡车"))
-			return true;
-		return false;
-	}
 
 }
