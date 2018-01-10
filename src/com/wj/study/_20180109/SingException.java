@@ -7,11 +7,11 @@ public class SingException extends Exception{
 	public SingException (){
 		//无参构造方法
 		try{
-		int[] sing =new int[5];
-		for(int i = 0; i >= 0;i++ ){
-			sing[i] = i + 1;
-			System.out.println(Arrays.toString(sing));
-		}
+		    int[] sing =new int[5];
+		    for(int i = 0; i >= 0;i++ ){
+			    sing[i] = i + 1;
+			    System.out.println(Arrays.toString(sing));
+		    }
 		} catch (Exception e){ 
 			e.printStackTrace();
 			System.out.println("循环异常了！");
@@ -29,7 +29,7 @@ public class SingException extends Exception{
 				e.printStackTrace();
 			}
     	} else {
-		System.out.println("结果为：" + i/j);
+		    System.out.println("结果为：" + i/j);
     	}
 	}
 	
