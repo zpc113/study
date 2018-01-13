@@ -28,13 +28,13 @@ public class BookTest1 {
 	        if (name1.contains(books[i].name))
 	        	return books[i].name;
 	    }
-	    throw new NothingException("图书不存在！");
+	    throw new NothingException("图书不存在！");//抛出异常
 	}
 	public String test3(int num1) throws NothingException{
 	    if (num1 >= books.length - 1){
 	        return books[num1 - 1].name;	
 	    }
-	        throw new NothingException("图书不存在！");
+	    throw new NothingException("图书不存在！");
 	}
 	public static int test4(){
 		try {
@@ -55,7 +55,7 @@ public class BookTest1 {
 			}
 		}catch (InputException e){
 			System.out.println(e.getMessage());
-			return 0;
+			return 0;//把返回值当成判断条件
 		}catch (NothingException e){
 			System.out.println(e.getMessage());
 			return 0;
