@@ -43,6 +43,17 @@ public class StringChange {
 		
 		System.out.println("获取[3,7)之间的子字符串：" + i.substring(3, 7));//不包括结尾
 		//使用 substring(beginIndex , endIndex) 进行字符串截取时，包括 beginIndex 位置的字符，不包括 endIndex 位置的字符
+		
+		System.out.println("转换为小写：" + i.toLowerCase());
+		
+		System.out.println("获取索引为1位置的字符：" + i.charAt(1));
+		
+		byte[] by = i.getBytes();
+		System.out.println("转换为字节数组：" );
+		for (int j = 0 ; j < by.length ; j++){
+			System.out.print(by[j] + " ");
+		}
+		System.out.println();
 
 	}
 
