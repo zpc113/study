@@ -3,7 +3,7 @@ package com.wj.study._20180114;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ThreadTest {
+public class ThreadTest {//线程
 	
 	public static String test = new String("test");
 	static int i = 0;
