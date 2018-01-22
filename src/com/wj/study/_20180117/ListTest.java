@@ -69,11 +69,30 @@ public class ListTest {
 	
 	//通过for each方法访问集合
 	public void testForEach(){
+		System.out.println("有如下课程(for each):");
 		for (Object obj : coursesToSelect){
 			Course cr = (Course) obj;
 			System.out.println("课程" + cr.id + ":" + cr.name);
 		}
 	}
+	//1.22
+	//修改List中的元素,set()方法,前面表示修改的位置。后面表示修改的内容
+	public void testModify(){
+		coursesToSelect.set(4, new Course("7","毛概"));
+	}
+	
+	//删除List中的元素，remove，removeAll
+	public void testRemove(){
+		//Course cr = (Course) coursesToSelect.get(4);//1
+		//System.out.println("我是课程：" + cr.id + ":" + cr.name + "\t我即将消失！");
+		//coursesToSelect.remove(cr);
+		//coursesToSelect.remove(4);//2、可以直接写位置，但会报数组下标越界异常
+		Course[] courses = {(Course) coursesToSelect.get(4),(Course) coursesToSelect.get(5)};
+		coursesToSelect.removeAll(Arrays.asList(courses));//3、将数组转为集合，将参数传入，可删除多个集合的元素
+		System.out.println("我消失了！");
+		
+	}
+	
 	    
 	
 	public static void main(String[] args){
@@ -81,6 +100,12 @@ public class ListTest {
 		lt.testAdd();
 		lt.testGet();
 		lt.testIterator();
+		lt.testForEach();
+		
+		lt.testModify();
+		lt.testForEach();//set方法后需要再一次输出内容
+		
+		lt.testRemove();
 		lt.testForEach();
 	}
 
