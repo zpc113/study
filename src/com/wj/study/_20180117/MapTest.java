@@ -2,8 +2,11 @@ package com.wj.study._20180117;
 //1.27   HashMap,无序
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
+
+import javax.sound.midi.Synthesizer;
 
 import org.omg.Messaging.SyncScopeHelper;
 
@@ -57,12 +60,67 @@ public class MapTest {
 		}
 		
 	}
+	
+	//1.29
+	//测试删除Map中的映射
+	
+	public void testRemove(){
+		Scanner input = new Scanner(System.in);
+		while (true){
+			System.out.println("请输入需要删除的学生ID：");
+			String ID = input.next();
+			Student st = students.get(ID);//判断该ID是否有对应的学生
+			if (st == null){
+				System.out.println("未找到该学生！");
+				continue;
+			}
+			students.remove(ID);
+			System.out.println("成功删除学生：" + st.name);
+			break;
+		}
+	}
+	
+	
+	//通过entrySet方法来遍历循环Map,获得所有键值对
+	public void testEntrySet(){
+		Set < Entry < String,Student> > entrySet = students.entrySet();
+		for (Entry <String , Student> entry : entrySet){
+			System.out.println("取得键：" + entry.getKey());
+			System.out.println("取得值：" + entry.getValue().name);//getValue返回的是Student
+		}
+	}
+	
+	//利用put方法修改Map中的已有映射
+	public void testModify(){
+		System.out.println("请输入要修改的学生ID：");
+		Scanner input = new Scanner(System.in);
+		while (true){
+			String stuID = input.next();
+			Student student = students.get(stuID);
+			if (student == null){
+				System.out.println("该ID不存在！请重新输入！");
+				continue;
+			}
+			System.out.println("当前学生信息：" + student.name);
+			System.out.println("请输入新学生的姓名：");
+			String name = input.next();
+			Student newStudent = new Student(stuID,name);
+			students.put(stuID, newStudent);
+			System.out.println("修改成功！");
+			break;
+		}
+		
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		MapTest mt = new MapTest();
 	    mt.testPut();
 		mt.testKeySet();
+		//mt.testRemove();
+		//mt.testEntrySet();
+		mt.testModify();
+		mt.testEntrySet();
 	}
 
 }
