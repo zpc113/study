@@ -5,13 +5,18 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.sound.midi.Synthesizer;
+
 //1.25   Set
 public class SetTest {
 	
 	public List<Course> coursesToSelect;
 	
+	private  Scanner input;
+	
 	public SetTest(){
 		coursesToSelect = new ArrayList<Course>();
+		input = new Scanner(System.in);//在构造器中初始化
 	}
 	
 	public void testAdd(){
@@ -44,6 +49,7 @@ public class SetTest {
 		// TODO Auto-generated method stub
 		SetTest st = new SetTest();
 		st.testAdd();
+		st.testListContains();
 		st.testForEach();
 		//创建一个学生对象
 		Student student = new Student("1" , "小猫");
@@ -67,6 +73,24 @@ public class SetTest {
 			System.out.println(student.name + "选了如下课程" + cr.id + ":" + cr.name);
 		}
 
+	}
+	
+	
+	//1.31
+	//测试List的contains方法
+	public void testListContains(){
+		Course course = coursesToSelect.get(0);
+		System.out.println("取得课程：" + course.name);
+		System.out.println("备选课程中是否包含课程：" + course.name + coursesToSelect.contains(course));
+	    
+		System.out.println("请输入课程名称：");
+		String name = input.next();
+		//创建一个新的课程对象，ID和名称与course对象完全一样,并不包含该对象
+		Course course2 = new Course();
+		course2.name = name;
+		System.out.println("新创建的课程为：" + course2.name);
+		System.out.println("备选课程中是否包含课程：" + course2.name + coursesToSelect.contains(course2));
+		
 	}
 
 }
