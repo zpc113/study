@@ -10,7 +10,7 @@ public class SetTest {
 	
 	public List<Course> coursesToSelect;
 	
-	private  Scanner input;
+	private Scanner input;
 	
 	public SetTest(){
 		coursesToSelect = new ArrayList<Course>();
