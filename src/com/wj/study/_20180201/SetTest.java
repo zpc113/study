@@ -55,6 +55,9 @@ public class SetTest {
 			for (Course cr : coursesToSelect){//set中加入的某个对象，无论保留多少该对象，最终只会保留一个。且保留的是第一个，可以保留空对象即null。
 				if (cr.id.equals(num)){
 					student.courses.add(cr);//把cr加入学生选的课程
+					System.out.println(student.courses);
+			    } else {
+			    	System.out.println("该课程不存在！");
 			    }
 			}
 		}
@@ -62,12 +65,14 @@ public class SetTest {
 	
 	//测试Set的contains方法
 	public void testContains(){
+		//Student student = new Student("1" , "小猫");
 		System.out.println("请输入学生已选的课程名称：");
 		String name = input.next();
 		Course course2 = new Course();
 		course2.name = name;
 		System.out.println("新创建的课程为：" + course2.name);
-		System.out.println("备选课程中是否包含课程：" + course2.name + student.courses.contains(course2));
+		System.out.println("备选课程中是否包含课程：" +
+		    course2.name + student.courses.contains(course2));
 	}
 
 	public static void main(String[] args) {

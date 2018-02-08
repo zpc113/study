@@ -74,7 +74,7 @@ public class SetTest {
 	}
 	
 	
-	//1.31
+	//1.31 
 	//测试List的contains方法
 	public void testListContains(){
 		Course course = coursesToSelect.get(0);
@@ -89,6 +89,13 @@ public class SetTest {
 		System.out.println("新创建的课程为：" + course2.name);
 		System.out.println("备选课程中是否包含课程：" + course2.name + coursesToSelect.contains(course2));
 		
+		//2.6
+		//通过indexOf的方法来取得某元素的位置,lastIndexof方法：如果有相同的元素，则会返回最后一个的位置
+		//没有该元素出现的话，两个方法都会返回-1
+		if (coursesToSelect.contains(course2)){
+			System.out.println("课程：" + course2.name + "索引的位置：" + coursesToSelect.indexOf(course2));
+			
+		}
 	}
 
 }
