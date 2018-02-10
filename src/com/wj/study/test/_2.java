@@ -1,6 +1,7 @@
 package com.wj.study.test;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 有两个单链表，代表两个非负数，每一个节点代表一个数位，数字是反向存储的，即第一个结点表示最低位，最后一个结点表示最高位。
@@ -12,30 +13,17 @@ import java.util.Scanner;
  */
 public class _2 {
 	
-	public static void outPut(String a){
-		for (int i = a.length()-1;i >= 0 ; i--){
-			System.out.print(a.charAt(i));
-			if (i == 0){
-				System.out.println("");
-			} else {
-			    System.out.print("->");
-			}
-		}
-		
-	}
-	
 	public static void main(String args[]){
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("输入非负数1：");
-		String a1 = scanner.next();
-		outPut(a1);
-		System.out.println("\n输入非负数2：");
-		String a2 = scanner.next();
-		outPut(a2);
-		int a3 = Integer.parseInt(a1) + Integer.parseInt(a2);
-		String a4 = a3 + "";
-		System.out.println("两数相加的和为：" + a4);
-		outPut(a4);
+		List<Integer> arr1 = new ArrayList<Integer>();
+		arr1.add(2);
+		arr1.add(4);
+		arr1.add(3);
+		List<Integer> arr2 = new ArrayList<Integer>();
+		arr2.add(5);
+		arr2.add(6);
+		arr2.add(4);
+		// 把这两个list里面的数字转换为十进制的数，如 arr1 -> 342  arr2 -> 465
+		// 然后再继续
 	}
 
 }
