@@ -1,6 +1,7 @@
 package com.wj.study.test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -24,6 +25,31 @@ public class _2 {
 		arr2.add(4);
 		// 把这两个list里面的数字转换为十进制的数，如 arr1 -> 342  arr2 -> 465
 		// 然后再继续
+		int sum3 = test1(arr1) + test1(arr2);
+		List<Integer> arr3 = new ArrayList<Integer>();
+		String temp = sum3 + "";
+		System.out.println(temp);
+		int length = temp.length();
+        for (int i = 0 ; i < temp.length() ;i++){
+        	String j = temp.charAt(temp.length() - 1 - i) + "";
+        	int k = Integer.parseInt(j);
+        	System.out.println(j);
+			arr3.add(k);
+		}
+        System.out.println(arr3);
+		
+		
+	}
+	
+	public static int test1(List<Integer> arr){
+		int size = arr.size();
+		String num = "";
+		for (int i = size -1 ,j = size - 1 - i; i >= 0 ; i--){
+			num = num + arr.get(i);
+		}
+		int sum = Integer.parseInt(num);
+		System.out.println(sum);
+		return sum;
 	}
 
 }
