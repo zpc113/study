@@ -12,7 +12,7 @@ public class Text {
 		if (sum == 1) {
 			System.out.println("进入选车");
 			System.out.println("***价目表***\n序号\t名称 \t价格\t载客/货");// \t拉开距离
-			Car[] rent = { new Bus1(1, "法拉利", 100, 0, 3, 0), new Bus2(2, "兰博基尼", 200, 0, 4, 0),
+			Car[] rent = { new Bus1(1, "法拉利", 1000000, 0, 3, 0), new Bus2(2, "兰博基尼", 200, 0, 4, 0),
 					new Truck1(3, "拖拉机", 300, 1, 0, 3), new Truck2(4, "东风风神", 400, 1, 0, 5),
 					new PickUp(5, "皮卡车", 500, 2, 2, 3) };
 			// 可以用任何类型来定义

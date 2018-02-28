@@ -111,6 +111,17 @@ public class MapTest {
 		}
 		
 	}
+	
+	
+	/*2.24
+	 * 判断Map中是否包含某个Key值或者某个Value值
+	 */
+	public void testContainsKeyOrValue (){
+		//用containsKey()方法判断是否包括某个Key值，containsValue（）某个Value值
+		System.out.println("请输入学生id:");
+		Scanner input = new Scanner(System.in);
+	}
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
