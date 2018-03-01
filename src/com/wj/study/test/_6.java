@@ -8,14 +8,14 @@ package com.wj.study.test;
 public class _6 {
 	public static void main(String[] args) {
 		String str = "PAYPALISHIRING";
-		int line = 4 ;//行数
+		int line = 5 ;//行数
 		int num = line - 1 ;//一个√所占列数
 		int sum = line * 2 - 2 ;//一个√所占字符数
 		int column ;//总列数
 		if (str.length()%sum <= line) {
 			column = (str.length()/sum)*num + 1;
 		} else {
-			column = (str.length()/sum)*num + (str.length()%sum - line);
+			column = (str.length()/sum)*num + (str.length()%sum - line) + 1;
 		}
 		String[][] arr = new String[line][column];
 		System.out.println( num + "\t" + sum + "\t" + column);
@@ -31,13 +31,13 @@ public class _6 {
  				    k++;
 				}
 			}
-			for (int m = line - 2; m >= 1 ; m--){
+			for (int m = line - 2; m >= 1 ; m-- ){
 				if (k >= str.length()) {
 					break;
 				} else {
-				n++;
-				arr[m][n] = str.charAt(k) + "";
-				k++;
+				    n++;
+				    arr[m][n] = str.charAt(k) + "";
+				    k++;
 			    }
 			}
 		}
