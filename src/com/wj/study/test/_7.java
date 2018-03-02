@@ -13,7 +13,32 @@ import java.util.List;
  */
 public class _7 {
 	public static void main(String[] args) {
-		int num = -123;
-		
+		int num = -123890;
+		String str1 = "";
+		int e = 0;
+	    if (num >= 0 ){
+	    	String str = num + "";
+		    for (int i = 0 ; num >= (Math.pow(10, i));i++){
+				int b = (int) (num/(Math.pow(10, i)));
+				int c = (int) (b/10) ;
+				int d = b - c*10 ;
+				str1 = str1 + d ;
+	    	}
+		    e = Integer.valueOf(str1);
+	    	System.out.println(e);
+	    } else {
+	    	String str = ( 0 - num) + "";
+	    	
+	    	for (int i = 0 ; (-num) >= (Math.pow(10, i));i++){
+				int b = (int) ((-num)/(Math.pow(10, i)));
+				int c = (int) (b/10) ;
+				int d = b - c*10 ;
+				str1 = str1 + d ;
+	    	}
+		    e = Integer.valueOf(str1);
+		    int f = - e ;
+	    	System.out.println(f);
+	    		
+	    }
 	}
 }
