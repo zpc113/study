@@ -113,13 +113,27 @@ public class MapTest {
 	}
 	
 	
-	/*2.24
+	/*2.24       3.4
 	 * 判断Map中是否包含某个Key值或者某个Value值
 	 */
 	public void testContainsKeyOrValue (){
-		//用containsKey()方法判断是否包括某个Key值，containsValue（）某个Value值
+		//用containsKey()方法判断是否包括某个Key值{返回true，则包含}不需要方法重写
+        //containsValue（）某个Value值,不需要方法重写
 		System.out.println("请输入学生id:");
 		Scanner input = new Scanner(System.in);
+		String id = input.next();
+		System.out.println("您输入的学生id为：" + id + "，在学生映射表中是否存在：" 
+		    + students.containsKey(id));
+		if (students.containsKey(id)){
+			System.out.println("对应的学生为：" + students.get(id).name);
+		}
+		System.out.println("请输入学生姓名：");
+		String name = input.next();
+		if (students.containsValue(new Student(null , name))){
+			System.out.println("表中包含该姓名：" + name);
+		} else {
+			System.out.println("不包含该学生。");
+		}
 	}
 	
 
@@ -130,8 +144,9 @@ public class MapTest {
 		mt.testKeySet();
 		//mt.testRemove();
 		//mt.testEntrySet();
-		mt.testModify();
-		mt.testEntrySet();
+//		mt.testModify();
+//		mt.testEntrySet();
+		mt.testContainsKeyOrValue();
 	}
 
 }
