@@ -59,12 +59,48 @@ public class CollectionTest {
 		}
 	}
 	
+	
+	//3.7
+	//对其他类型的泛型的list进行排序，以Student为例
+	public void sort3(){
+		List<Student> studentList = new ArrayList<Student>();
+		List<Integer> k = new ArrayList<Integer>();
+		Random random = new Random();
+		//生成3个随机1000以内不重复的正整数作为id
+		Integer j;
+		for(int i = 0 ; i < 3 ; i++){
+			do {
+				j = random.nextInt(1000);//1000以内的随机整数
+			} while (k.contains(j));
+			k.add(j);
+		}
+		System.out.println(k);
+		studentList.add(new Student(k.get(0) + "","金毛"));//id为string类型
+		studentList.add(new Student(k.get(1) + "","二哈"));
+		studentList.add(new Student(k.get(2) + "","田园"));
+		System.out.println("------------排序前-----------");
+		for (Student student : studentList) {
+			System.out.println("学生：" + student.id + "," + student.name);
+		}
+		//排序时元素要实现comparable接口,可比较的
+		/*
+		 *comparable---默认比较规则，其实现类是compareTo（）方法，返回正数表示大，负数表示小，0表示相等
+		 *comparator---临时比较规则 ，比较工具接口，其实现类是compare（）方法
+		 *java集合框架：Collection接口，Map接口，Comparable接口，Collections工具类，Comparator接口
+		 */
+		Collections.sort(studentList);
+		System.out.println("------------排序后-----------");
+		for (Student student : studentList) {
+			System.out.println("学生：" + student.id + "," + student.name);
+		}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		CollectionTest co = new CollectionTest();
-		co.sort1();
-		co.Sort2();
+		//co.sort1();
+		//co.Sort2();
+		co.sort3();
 
 	}
 

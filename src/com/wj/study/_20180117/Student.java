@@ -3,7 +3,7 @@ package com.wj.study._20180117;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Student {
+public class Student implements Comparable<Student>{
 	public String id;
 	public String name;
 	public Set<Course> Courses;
@@ -34,6 +34,12 @@ public class Student {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+	@Override
+	//3.7
+	public int compareTo(Student o) {//compareTo（）方法，返回正数表示大，负数表示小，0表示相等
+		// TODO Auto-generated method stub
+		return this.id.compareTo(o.id);//用当前的id和比较参数的id进行比较，将比较对象id的结果作为比较对象的结果来返回
 	}
 
 }
