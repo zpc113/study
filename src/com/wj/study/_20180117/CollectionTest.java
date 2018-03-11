@@ -40,6 +40,7 @@ public class CollectionTest {
 		for (Integer integer : integerList) {
 			System.out.println("元素：" + integer);
 		}
+		
 	}
 	
 	//对string泛型的list进行排序,小到大，0-9-A-Z-a-z
@@ -75,9 +76,9 @@ public class CollectionTest {
 			k.add(j);
 		}
 		System.out.println(k);
-		studentList.add(new Student(k.get(0) + "","金毛"));//id为string类型
-		studentList.add(new Student(k.get(1) + "","二哈"));
-		studentList.add(new Student(k.get(2) + "","田园"));
+		studentList.add(new Student(k.get(0) + "","ASD金毛"));//id为string类型
+		studentList.add(new Student(k.get(1) + "","ZXC二哈"));
+		studentList.add(new Student(k.get(2) + "","QWE田园"));
 		System.out.println("------------排序前-----------");
 		for (Student student : studentList) {
 			System.out.println("学生：" + student.id + "," + student.name);
@@ -90,6 +91,12 @@ public class CollectionTest {
 		 */
 		Collections.sort(studentList);
 		System.out.println("------------排序后-----------");
+		for (Student student : studentList) {
+			System.out.println("学生：" + student.id + "," + student.name);
+		}
+		
+		System.out.println("------------按照姓名排序后-------------");
+		Collections.sort(studentList, new StudentComparator());//实例化StudentComparator对象
 		for (Student student : studentList) {
 			System.out.println("学生：" + student.id + "," + student.name);
 		}
