@@ -1,10 +1,16 @@
 package com.wj.study._20180308;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Set;
+
+import com.wj.study._20180117.Student;
 
 public class PokerTest {
 	/**
@@ -17,92 +23,69 @@ public class PokerTest {
 	 *       最大的牌相等，则再按花色比较。
 	 * @param args
 	 */
+	public static Map < String ,  Poker> pokers;
+	
+	public PokerTest(){
+		this.pokers = new HashMap <String , Poker>();
+	}
+	
 	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		List<Poker> pokerList = new ArrayList<Poker>();
-		List<Poker> pokerList2 = new ArrayList<Poker>();
-		List<Poker> play1 = new ArrayList<Poker>();
-		List<Poker> play2 = new ArrayList<Poker>();
-		//List<Poker> playGame = new ArrayList<Poker>();
-		System.out.println("----------创建一副扑克牌：");
-		String[] huaSe = {"方片" , "梅花" , "红桃" , "黑桃"};
-		String[] dianShu = {"2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "10" , "J" , "Q" , "K" , "A"};
-	    
-		for (int i = 0 ; i < huaSe.length ; i++){
-			for (int j = 0 ; j < dianShu.length ; j++){
-				pokerList.add(new Poker(huaSe[i] , dianShu[j]));
+		String[] color = {"方片" , "梅花" , "红桃" , "黑桃"};
+		String[] num = {"1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" ,"9" , "10" , "J" , "Q" , "K" , "A"};
+		for (int i = 0 ; i < 4 ; i ++){
+			for (int j = 0 ; j < 13 ; j ++){
+				Poker poker = new Poker(i , j);
+				pokerList.add(poker);
 			}
 		}
-		System.out.println("该扑克牌有如下牌：" );
-		for (Poker poker : pokerList) {
-			System.out.print(poker.huaSe + poker.dianShu + ",");
-		}
 		
-		System.out.println("\n开始洗牌------");
-		Random random = new Random();
-		Integer k;
-		for (int i = 0 ; i < pokerList.size() ; i++){
-			do {
-				k = random.nextInt(pokerList.size() - 1);
-				pokerList2.add(pokerList.get(k));
-			} while (!pokerList2.contains(pokerList.get(k)));
-			
-		}
-		System.out.println("洗牌结束！");
-		
-		System.out.println("创建玩家------");
-		Scanner input = new Scanner(System.in);
-		System.out.println("请输入第1位玩家的ID和姓名-------");
-		System.out.println("请输入ID：");
-		int ID1 = input.nextInt();
-		System.out.println("请输入姓名:");
-		String name1 = input.next();
-		System.out.println("请输入第1位玩家的ID和姓名-------");
-		System.out.println("请输入ID：");
-		int ID2 = input.nextInt();
-		System.out.println("请输入姓名:");
-		String name2 = input.next();
-		System.out.println("欢迎玩家：" + name1 + "\n欢迎玩家：" + name2);
-		
-		System.out.println("开始发牌...");
-		for (int i = 0 ; i < 4 ; i++){
-			if ( i % 2 == 0){
-				play1.add(pokerList2.get(i));
-				System.out.println( name1 + "---拿牌");
-			} else {
-				play2.add(pokerList2.get(i));
-				System.out.println( name2 + "---拿牌");
-			}
-		}
-		System.out.println("发牌结束！" + "\n开始游戏------");
-		Collections.sort(play1);
-		System.out.println( name1 + "最大的手牌为" + play1.get(1).huaSe + play1.get(1).dianShu);
-		
-		Collections.sort(play2);
-		System.out.println( name2 + "最大的手牌为" + play2.get(1).huaSe + play2.get(1).dianShu);
-		
-		if (play1.get(1).dianShu.compareTo(play2.get(1).dianShu) > 0){
-			System.out.println(name1 + "获胜！");
-		} else if (play1.get(1).dianShu.compareTo(play2.get(1).dianShu) < 0){
-			System.out.println(name2 + "获胜！");
-		} else {
-			if (play1.get(1).huaSe.compareTo(play2.get(1).huaSe) > 0)
-			    System.out.println(name1 + "获胜！");
-			if (play1.get(1).huaSe.compareTo(play2.get(1).huaSe) > 0)
-				System.out.println(name1 + "获胜！");
-		}
+//		String[] color = {"方片" , "梅花" , "红桃" , "黑桃"};
+//		String[] num = {"1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" ,"9" , "10" , "J" , "Q" , "K" , "A"};
+//		
+//		for (int i = 0 ; i < color.length ; i ++){
+//			for (int j = 0 ; j < num.length ; j ++){
+//				Poker poker = new Poker(i , j);
+//				pokerList.add(poker);
+//				String pok = color[i] + num[j];
+//				System.out.println(poker.huaSe + "" + poker.dianShu);
+//				System.out.println(pok);
+//				pokers.put(pok, poker);
+//			}
+//		}
 		
 		
-		System.out.println("玩家各自的手牌为：\n" + name1 + ":");
-		for (Poker play11 : play1) {
-			System.out.print(play11.huaSe + play11.dianShu + ",");
-		}
-		System.out.println( "\n" + name2 + ":");
-		for (Poker play22 : play2) {
-			System.out.print(play22.huaSe + play22.dianShu + ",");
-		}
+//		Set<String> KeySet = pokers.keySet();
+//		for (String string : KeySet) {
+//			System.out.println(string);
+//		}
+//		
+//		System.out.println("开始洗牌。。。。。");
+//		Collections.shuffle(pokerList);
+//		List<Poker> pokerList2 = new ArrayList<Poker>();
+//		Random random = new Random();
+//		Integer k;
+//		for (int i = 0 ; i < pokerList.size() ; i ++){
+//			do {
+//				k = random.nextInt(pokerList.size() - 1);
+//				pokerList2.add(pokerList.get(k));
+//			} while (!pokerList2.contains(pokerList.get(k)));
+//		}
+//		System.out.println("洗牌结束。。。。。");
+		
+		
+		
+//		System.out.println("创建玩家。。。。。");
+//		Scanner input = new Scanner(System.in);
+//		int ID = input.nextInt();
+//		String name = input.next();
+//		Player play = new Player(ID , name);
+
+
 	}
+	
 
 }
